@@ -1,0 +1,146 @@
+
+/* ملاحظه يمكن وضع اكثر من كلاس في عنصر الكلاس ويكون لكل واحد خواص مختلفه
+مثال
+<div class="center-position circle-100px center-flex"> zero </div>
+
+*/
+
+
+/* فكرة عمل الفريم ورك انك توفر وقت في كتابة الاكواد الخاص بالسي اس اس */
+
+
+/* الفريم ورك للحجات التي تتكرر او المهمه فقط */
+
+
+/* من الميزات في الفريم ورك انك اذا ضفته لعناصر كثيره واردت تغيير القيمه لن تغير الا الفريم ورك */
+
+
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+/* لتوسيط العنصر */
+
+.center-position{                      
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+}
+
+
+.circle-100px{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+/*  تدوير العنصر */
+
+.circle-200px{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+/* توسيط المحتوي داخل العنصر */
+.center-flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+
+
+/* اسهم في جميع الاتجاهات مع تعديل البوزيشن*/
+
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+.top::after{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: -20px;
+    right: 5px;
+    border-width: 10px;
+    border-style: solid ;
+    border-color: transparent transparent #333 transparent;
+}
+
+
+
+
+.right::after{
+    content: "";
+    position: absolute;
+    right: -45px;
+    top: 10px;
+    width: 0;
+    height: 0;
+    border-width: 20px 21px 20px 24px;
+    border-style: solid solid solid solid;
+    border-color: transparent transparent transparent #eee;
+
+}
+
+
+.bottom::after{
+    content: "";
+    position: absolute;
+    top: 56px;
+    left: 200px;
+    width: 0;
+    height: 0;
+    border-width: 22px 20px 30px 20px;
+    border-style: solid solid solid solid;
+    border-color: #eee transparent transparent transparent;
+} 
+
+
+.left::after{
+    content: "";
+    position: absolute;
+    left: -42px;
+    top: 9px;
+    width: 0;
+    height: 0;
+    border-width: 20px 22px 20px 20px;
+    border-style: solid solid solid solid;
+    border-color: transparent #eee transparent transparent;
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+/* small */
+
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}
+
+/* medium */
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+
+/* large */
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/* <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+div{
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px , 1fr)); /* كثير الاستعمال*/
+    gap: 30px;
+}
